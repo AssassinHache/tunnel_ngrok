@@ -1,6 +1,6 @@
 # Solucion Ngrok + Reverse Proxy Unificado
 
-Esta carpeta contiene la infraestructura para exponer tus tres servicios locales a traves de una unica URL HTTPS/WSS publica mediante Ngrok y un contenedor Nginx liviano en Docker.
+Esta carpeta contiene la infraestructura para exponer tres servicios locales a traves de una unica URL HTTPS/WSS publica mediante Ngrok y un contenedor Nginx liviano en Docker.
 
 ---
 
