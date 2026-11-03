@@ -7,7 +7,7 @@ Esta carpeta contiene la infraestructura para exponer tres servicios locales a t
 ## Por que es necesario este proxy?
 
 1. **Permiso de Camara:** Los navegadores requieren obligatoriamente `https://` para activar la camara fuera de localhost.
-2. **Evitar Mixed Content:** Si el Frontend corre en HTTPS, las llamadas a la API de Laravel y al WebSocket de Python deben ser seguras (`https://` y `wss://`).
+2. **Evitar Mixed Content:** Si el Frontend corre en HTTPS, las llamadas a la API REST y al WebSocket deben ser seguras (`https://` y `wss://`).
 3. **Un solo tunel gratuito:** La cuenta gratuita de Ngrok te da 1 dominio estatico. Nginx agrupa los 3 servicios en el puerto local `8080` para que un solo tunel de Ngrok atienda todo.
 
 ---
@@ -18,7 +18,7 @@ Esta carpeta contiene la infraestructura para exponer tres servicios locales a t
 |---|---|---|
 | `https://tu-dominio/` | `http://localhost:5173` | Frontend Web (Vite con soporte HMR) |
 | `https://tu-dominio/api/` | `http://localhost:8000/api/` | Backend (Endpoints REST) |
-| `https://tu-dominio/storage/` | `http://localhost:8000/storage/` | Archivos publicos / subidas de Laravel |
+| `https://tu-dominio/storage/` | `http://localhost:8000/storage/` | Archivos publicos / subidas |
 | `wss://tu-dominio/corregir_pose/` | `ws://localhost:5000/corregir_pose/` | WebSocket de Python (FastAPI / Vision) |
 | `wss://tu-dominio/ws/` | `ws://localhost:5000/ws/` | WebSocket de Python |
 
@@ -30,7 +30,7 @@ Esta carpeta contiene la infraestructura para exponer tres servicios locales a t
 En tres terminales distintas:
 - **Frontend :**  (escuchando en `5173`)
 - **Backend :** ((escuchando en `8000`)
-- **Backend Python/otro:** `uvicorn main:app --reload --port 5000` (escuchando en `5000`)
+- **Backend Python/otro :** (escuchando en `5000`)
 
 ### 2. Configura tu dominio de Ngrok (Solo la primera vez)
 Puedes editar el archivo `ngrok.env` o dejar que el script te lo pregunte:
