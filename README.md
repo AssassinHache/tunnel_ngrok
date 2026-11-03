@@ -17,7 +17,7 @@ Esta carpeta contiene la infraestructura para exponer tres servicios locales a t
 | Ruta Publica | Destino Local | Descripcion |
 |---|---|---|
 | `https://tu-dominio/` | `http://localhost:5173` | Frontend Web (Vite con soporte HMR) |
-| `https://tu-dominio/api/` | `http://localhost:8000/api/` | Backend Laravel (Endpoints REST) |
+| `https://tu-dominio/api/` | `http://localhost:8000/api/` | Backend (Endpoints REST) |
 | `https://tu-dominio/storage/` | `http://localhost:8000/storage/` | Archivos publicos / subidas de Laravel |
 | `wss://tu-dominio/corregir_pose/` | `ws://localhost:5000/corregir_pose/` | WebSocket de Python (FastAPI / Vision) |
 | `wss://tu-dominio/ws/` | `ws://localhost:5000/ws/` | WebSocket de Python |
@@ -28,9 +28,9 @@ Esta carpeta contiene la infraestructura para exponer tres servicios locales a t
 
 ### 1. Inicia tus tres servicios locales normalmente
 En tres terminales distintas:
-- **Frontend (front_gym):** `pnpm run dev` (escuchando en `5173`)
-- **Backend PHP:** `php artisan serve` (escuchando en `8000`)
-- **Backend Python:** `uvicorn main:app --reload --port 5000` (escuchando en `5000`)
+- **Frontend :**  (escuchando en `5173`)
+- **Backend :** ((escuchando en `8000`)
+- **Backend Python/otro:** `uvicorn main:app --reload --port 5000` (escuchando en `5000`)
 
 ### 2. Configura tu dominio de Ngrok (Solo la primera vez)
 Puedes editar el archivo `ngrok.env` o dejar que el script te lo pregunte:
